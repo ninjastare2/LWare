@@ -18,8 +18,48 @@ _G.KaitunConfig = {
       ["Buy Hakis"] = true,
       ["Buy Guns"] = true,
       ["Buy Swords"] = true,
-      ["Upgrade Weapons"] = false,
+      ["Upgrade Weapons"] = true,
       ["Farming Boss Drops When X2 Expired"] = true,
+      ["Mirage Puzzle"] = true,
+      ["Saber"] = true
+    },
+    ["Fps Boosting"] = true,
+    ["Fruit Snipping"] = true,
+    ["Fruit Eating"] = true,
+    ["High Ping Hop"] = true,
+    ["Fruit Choosen"] = {
+      ["T-Rex-T-Rex"] = true,
+      ["Shadow-Shadow"] = true,
+      ["Mammoth-Mammoth"] = true,
+      ["Gravity-Gravity"] = true,
+      ["Spirit-Spirit"] = true,
+      ["Dark-Dark"] = true,
+      ["Rocket-Rocket"] = true,
+      ["Control-Control"] = true,
+      ["Dough-Dough"] = true,
+      ["Leopard-Leopard"] = true,
+      ["Venom-Venom"] = true,
+      ["Dragon-Dragon"] = true,
+      ["Diamond-Diamond"] = true,
+      ["Kitsune-Kitsune"] = true,
+    },
+    ['Auto Switch Melee'] = true,
+    ["Allow Stored"] = true,
+    ["Race Choosen"] = {
+      ["Human"] = true,
+    },
+    ["Tushita Hopping"] = true,
+    ["Mirage Hopping"] = true,
+    ["Race Snipping"] = true,
+    ["Tween Speed"] = 350,
+    ["Same Y Tween"] = true,
+}
+repeat 
+  pcall(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/memaybeohub/NewPage/main/Kaitun.lua'))()
+  end)
+  task.wait()
+until 1 < 0
       ["Mirage Puzzle"] = true,
       ["Saber"] = true
     },
