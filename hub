@@ -1,0 +1,126 @@
+-- Load Fluent UI and related addons
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+-- Create the main window
+local Window = Fluent:CreateWindow({
+    Title = "LameNess",
+    SubTitle = "by your name",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+-- Create tabs
+local Tabs = {
+    BloxFruits = Window:AddTab({ Title = "BloxFruits", Icon = "" }),
+    MemeSea = Window:AddTab({ Title = "Meme Sea", Icon = "" }),
+    MM2 = Window:AddTab({ Title = "MM2", Icon = "" }),
+    Leaked = Window:AddTab({ Title = "Leaked", Icon = "" }) -- New tab for Leaked scripts
+}
+
+-- Define functions for each script
+local function starlight_kaitun()
+    loadstring([[ 
+    https://raw.githubusercontent.com/ninjastare2/LWare/main/kaitun]])()
+end
+
+local function tsuo_aut_bounty()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ninjastare2/LWare/refs/heads/main/autobunt",true))()
+end
+
+local function tsuo_hub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts"))()
+end
+
+local function redz()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/UPDATE-4-Meme-Sea-Redz-hub-16910"))()
+end
+
+local function starry()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Murder-Mystery-2-NEW-Starry-OP-Best-Script-Hub-17868"))()
+end
+
+local function xhub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2"))()
+end
+
+-- Add a new function for Blade Ball (you can insert the content from message.txt here)
+local function blade_ball()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/DevTravDYT/dsaaswadfeszad/main/visual/BladeBall'))()
+
+-- Add buttons to the BloxFruits tab
+Tabs.BloxFruits:AddButton({
+    Title = "Starlight Kaitun",
+    Description = "Execute the Starlight Kaitun script",
+    Callback = starlight_kaitun
+})
+
+Tabs.BloxFruits:AddButton({
+    Title = "Tsuo Aut Bounty",
+    Description = "Execute the Tsuo Aut Bounty script",
+    Callback = tsuo_aut_bounty
+})
+
+Tabs.BloxFruits:AddButton({
+    Title = "Tsuo Hub",
+    Description = "Execute the Tsuo Hub script",
+    Callback = tsuo_hub
+})
+
+-- Add buttons to the Meme Sea tab
+Tabs.MemeSea:AddButton({
+    Title = "Tsuo",
+    Description = "Execute the Tsuo Hub script",
+    Callback = tsuo_hub
+})
+
+Tabs.MemeSea:AddButton({
+    Title = "Redz",
+    Description = "Execute the Meme Sea Redz Hub script",
+    Callback = redz
+})
+
+-- Add buttons to the MM2 tab
+Tabs.MM2:AddButton({
+    Title = "Starry",
+    Description = "Execute the Starry script for MM2",
+    Callback = starry
+})
+
+Tabs.MM2:AddButton({
+    Title = "Xhub",
+    Description = "Execute the Xhub script for MM2",
+    Callback = xhub
+})
+
+-- Add buttons to the Leaked tab
+Tabs.Leaked:AddButton({
+    Title = "Blade Ball",
+    Description = "Execute the Blade Ball script from leaked content",
+    Callback = blade_ball -- Execute the blade_ball function
+})
+
+-- Set up SaveManager and InterfaceManager
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+-- Select the BloxFruits tab and notify the user
+Window:SelectTab(1)
+Fluent:Notify({
+    Title = "LameNess",
+    Content = "The script has been loaded.",
+    Duration = 8
+})
+
+-- Load auto-load configuration if available
+SaveManager:LoadAutoloadConfig()
